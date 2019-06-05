@@ -3,7 +3,26 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+
+  max = None
+
+  if len(recipe) != len(ingredients):
+    return 0 # 'Ingredient lists don\'t match!'
+
+  for i in recipe:
+    try:
+      if recipe[i] > ingredients[i]:
+        return 0
+      if max == None:
+        max = ingredients[i] // recipe[i]
+        continue
+      if ingredients[i] // recipe[i] < max:
+        max = ingredients[i] // recipe[i]
+
+    except AttributeError:
+      return 'Ingredient lists don\'t match!'
+
+  return max
 
 
 if __name__ == '__main__':
