@@ -15,11 +15,8 @@ def find_max_profit(prices):
     for i in prices[index + 1:]:
       if  i - item > max:
         max = i - item
-        print('item', item, 'i', i)
        
   return max
-
-print(find_max_profit([100]))
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
