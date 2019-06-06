@@ -3,7 +3,20 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  cache = [0] * (amount + 1)
+  # seed cache with known value
+  cache[0] = 1
+
+  for coin in denominations:
+    for higher_amount in range(coin, amount + 1):
+      method = higher_amount - coin
+
+      if cache[method]:
+        cache[higher_amount] += cache[method]
+
+  return cache[amount]
+
+print(making_change(20, [1, 5, 10, 25, 50]))
 
 
 if __name__ == "__main__":
