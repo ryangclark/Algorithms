@@ -8,9 +8,9 @@ def rock_paper_scissors(n):
 
   for i in range(n):
     acc = []
-    for index, item in enumerate(plays_list):
-      for j in plays:
-        acc.append(item + [j])
+    for j in plays_list:
+      for k in plays:
+        acc.append(j + [k])
     plays_list = acc
     
   return plays_list
